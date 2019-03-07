@@ -1,0 +1,45 @@
+/*En la hoja de CSS es recomendable usar clases
+porque los id son mas lentos y la hacen mas pesada*/
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+img{
+    /*Responsivo*/
+    max-width: 100%;
+}
+.site-header{
+    /*Padding: Arriba, derecha, abajo, izquierda*/
+    /*Padding: Arriba-abajo, der-izq*/
+    padding: 20px 0;
+}
+
+.contenedor{
+    max-width: 1200px;
+    /*Tecnica para centrar layouts margin: 0 auto;*/
+    margin: 0 auto;
+}
+
+/**Navegacion*/
+.barra{
+    background-color: #DB008D;
+}
+
+.navegacion-principal a{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 22px;
+    display: block;
+    text-align: center;
+    padding: 20px;
+}
+/*!Responsivo*/
+@media (min-width:768px){
+    .navegacion-principal a{
+        /*!Aca solo se reescribe lo que se desea reescribir*/
+        display: inline-block;
+    }
+}
+.navegacion-principal a:hover{
+    background-color: #00b8e4;
+}
