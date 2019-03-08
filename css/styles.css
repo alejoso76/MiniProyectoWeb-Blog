@@ -65,6 +65,40 @@ p{
     display: block;*/
 }
 
+/**Navegacion responsive*/
+.barra{
+    overflow: hidden;
+}
+.mobile-menu{
+    color: #ffffff;
+    font-size: 2rem;
+    text-align: center;
+    display: block;
+    padding: 20px 0;
+}
+
+#nav:target{
+    max-height: 800px;
+}
+
+.navegacion-principal{
+    max-height: 0;
+    transition: .5s;
+}
+
+@media (min-width:768px){
+    .navegacion-principal{
+        /*Para evitar que no se vea por el max-height: 0*/
+        max-height: unset;
+    }
+
+    .mobile-menu,
+    .cerrar{
+        display: none!important;
+    }
+}
+
+
 /**Navegacion*/
 .barra{
     background-color: #DB008D;
