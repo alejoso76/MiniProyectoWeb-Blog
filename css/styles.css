@@ -1,5 +1,14 @@
 /*En la hoja de CSS es recomendable usar clases
 porque los id son mas lentos y la hacen mas pesada*/
+/* apply a natural box layout model to all elements, but allowing components to change */
+/*? Link box sizing: https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -7,6 +16,12 @@ body{
 img{
     /*Responsivo*/
     max-width: 100%;
+}
+
+p{
+    font-size: 16px;
+    /*Interlineado*/
+    line-height: 2;
 }
 .site-header{
     /*Padding: Arriba, derecha, abajo, izquierda*/
@@ -18,6 +33,17 @@ img{
     max-width: 1200px;
     /*Tecnica para centrar layouts margin: 0 auto;*/
     margin: 0 auto;
+    /*Una forma para solucionar el float
+    overflow: auto;*/
+}
+
+/*Otra forma para solucionar el float*/
+.clearfix::after{
+    content: '';
+    clear: both;
+    display: block;
+    /*Se puede usar cualquiera
+    display: block;*/
 }
 
 /**Navegacion*/
@@ -33,6 +59,7 @@ img{
     text-align: center;
     padding: 20px;
 }
+
 /*!Responsivo*/
 @media (min-width:768px){
     .navegacion-principal a{
@@ -40,6 +67,58 @@ img{
         display: inline-block;
     }
 }
+
 .navegacion-principal a:hover{
     background-color: #00b8e4;
+}
+
+/**Contenedores principales*/
+.contenido-principal,
+.sidebar{
+    padding: 20px;
+}
+
+/*Ya no se usa el tamaño en px, no es responsivo*/
+/*!Responsivo*/
+@media (min-width: 768px){
+    .contenido-principal{
+        width: 70%;
+        float: left;
+        padding-right: 0 60px 0 0;
+        /*Box sizing se usa cuando se aplique padding o border no se afecte el tamaño principal*/
+    }
+    .sidebar{
+        /*No se puede poner mas de 400px porque el total es de 1200px.
+        NUNCA se debe sobrepasar el tamaño total*/
+        width: 30%;
+        float: right;
+        padding: 0;
+    }
+}
+
+/**Entradas de blog*/
+h2{
+    color: #00b8e4;
+    margin-bottom: 20px;
+}
+
+.entrada{
+    margin-top: 30px;
+}
+
+.entrada img{
+    display: block;
+}
+
+/*!Responsivo*/
+@media (min-width: 480){
+    .entrada img{
+        width: 300px;
+        float: left;
+        margin: 0 30px 0 0;
+    }
+}
+
+.entrada p{
+    text-align: justify;
 }
